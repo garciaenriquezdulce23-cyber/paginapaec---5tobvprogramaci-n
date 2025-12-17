@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PÁGINA WEB SOBRE EL PAEC</title>
+    
+    <style>
+        :root {
+            --color-primario-oscuro: #0d3b66; 
+            --color-primario: #74a8d3;      
+            --color-acento-verde: #74c69d;    
+            --color-acento-calido: #f9a620;   
+            --color-fondo: #e0f2f7;         
+            --color-texto: #333333;
+            --color-blanco: #ffffff;
+            --sombra-suave: 0 4px 12px rgba(0, 80, 150, 0.08);
+            --sombra-media: 0 6px 20px rgba(0, 80, 150, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-primario) var(--color-fondo);
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-fondo);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--color-primario);
+            border-radius: 10px;
+            border: 2px solid var(--color-fondo);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--color-primario-oscuro);
+        }
+
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 950px; 
+            margin: 30px auto;    
+            padding: 30px;      
+            background-color: var(--color-blanco); 
+            border-radius: 16px; 
+            box-shadow: var(--sombra-media);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--color-acento-verde);
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: var(--color-primario-oscuro); 
+            padding-bottom: 10px;
+            margin-bottom: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: var(--color-primario);
+            border-bottom: 3px solid var(--color-acento-verde);
+            padding-bottom: 12px;
+            margin-top: 45px;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 50%;
+            height: 3px;
+            background-color: var(--color-acento-calido);
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: var(--color-primario-oscuro); 
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        nav {
+            text-align: center;
+            background: var(--color-primario-oscuro);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: var(--sombra-media);
+        }
+
+        nav a {
+            display: inline-block; 
+            text-decoration: none; 
+            background-color: var(--color-primario); 
+            color: var(--color-blanco); 
+            padding: 10px 20px; 
+            border-radius: 25px; 
+            margin: 5px 8px; 
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav a:hover {
+            background-color: var(--color-acento-calido); 
+            color: var(--color-primario-oscuro);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        img.responsive-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: var(--sombra-media);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        img.responsive-img:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 25px rgba(0, 80, 150, 0.2);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #e0e8f3;
+            margin-bottom: 20px;
+            border-radius: 12px; 
+            box-shadow: var(--sombra-suave);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: var(--color-blanco);
+            border-radius: 16px;
+            box-shadow: var(--sombra-suave);
+            
+            border: 1px solid var(--color-primario);
+        }
+
+        section p {
+            margin-bottom: 1em;
+            color: #555;
+        }
+
+        section ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        section ul li {
+            
+            background-color: #f0f7ff; 
+            border-left: 4px solid var(--color-acento-verde);
+            margin-bottom: 10px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 80, 150, 0.05);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        section ul li:hover {
+            transform: translateX(5px);
+            background-color: #eef3fa;
+        }
+        section ol {
+            list-style: decimal;
+            padding-left: 25px;
+        }
+        section ol li {
+            margin-bottom: 10px;
+        }
+        section ol strong {
+            color: var(--color-primario);
+        }
+        
+        #ejemplos ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-gap: 25px;
+            list-style-type: none;
+            padding: 0;
+            margin-top: 25px;
+        }
+        
+        #ejemplos li {
+            
+            background: #f0fdf4;
+            border: 1px solid var(--color-acento-verde);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--sombra-suave);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left; 
+            font-weight: normal;
+            color: var(--color-texto);
+        }
+        
+        #ejemplos li h4 {
+            color: var(--color-primario-oscuro);
+            margin-top: 0;
+            border-bottom: 2px solid var(--color-acento-calido);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        #ejemplos li strong {
+            color: var(--color-primario);
+        }
+        
+        #ejemplos li:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-media);
+        }
+        
+        
+        .form-container {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #f4fbf0; 
+            border-radius: 12px;
+            border: 1px solid var(--color-acento-verde);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05) inset;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--color-primario-oscuro);
+            font-size: 1.05em;
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d0d8e2;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            box-sizing: border-box; 
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--color-blanco);
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--color-primario);
+            box-shadow: 0 0 8px rgba(26, 117, 159, 0.4);
+        }
+        
+        .form-button {
+            background-color: var(--color-acento-calido);
+            color: var(--color-primario-oscuro);
+            padding: 14px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-button:hover {
+            background-color: #fbc02d; 
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        .form-button:disabled {
+            background-color: #ccc;
+            color: #666;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        
+        .form-success-message {
+            padding: 12px;
+            background-color: var(--color-acento-verde);
+            color: var(--color-primario-oscuro);
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        #faq-list .faq-item {
+            background: #e9f5ff;
+            padding: 18px 25px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border-left: 6px solid var(--color-acento-verde);
+            box-shadow: 0 2px 10px rgba(0, 80, 150, 0.07);
+            transition: background-color 0.3s ease;
+        }
+        
+        #faq-list .faq-item:hover {
+            background-color: #dbeaff;
+        }
+
+        #faq-list .faq-item h3 {
+            color: var(--color-primario-oscuro);
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+        #faq-list .faq-item p {
+            color: #444;
+            font-size: 0.95em;
+        }
+
+        .recursos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .recurso-link {
+            display: block;
+            text-decoration: none;
+            border-radius: 12px;
+            background-color: var(--color-blanco);
+            box-shadow: var(--sombra-suave);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e0e8f3;
+        }
+
+        .recurso-link:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .recurso-link img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            background-color: #f4f8fa;
+            border-bottom: 1px solid #e0e8f3;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .recurso-link span {
+            display: block;
+            padding: 15px 10px;
+            font-weight: 600;
+            color: var(--color-primario-oscuro);
+            font-size: 0.95em;
+        }
+
+        
+        .inclusion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .inclusion-item {
+            background-color: #e9f5ff; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 80, 150, 0.1);
+            border-left: 5px solid var(--color-acento-calido); 
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .inclusion-item:hover {
+            background-color: #dbeaff;
+            transform: translateY(-5px);
+        }
+
+        .inclusion-item h3 {
+            color: var(--color-primario-oscuro);
+            margin-top: 0;
+            font-size: 1.4em;
+            border-bottom: 1px dashed var(--color-primario);
+            padding-bottom: 5px;
+        }
+        .inclusion-item p {
+            font-size: 1em;
+            color: #444;
+        }
+
+      
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .idea-card {
+            background-color: #fff9e6; 
+            border: 1px solid #ffeeba;
+            border-left: 5px solid var(--color-acento-calido);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--sombra-suave);
+            transition: transform 0.3s ease;
+        }
+
+        .idea-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .idea-card h4 {
+            margin-top: 0;
+            color: var(--color-primario-oscuro);
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .idea-card .autor {
+            font-size: 0.85em;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .idea-card hr {
+            border: 0; 
+            border-top: 1px dashed #ccc; 
+            margin: 10px 0;
+        }
+
+
+        footer {
+            margin-top: 50px; 
+            text-align: center; 
+            padding: 30px;
+            background-color: var(--color-primario-oscuro);
+            color: var(--color-fondo);
+            border-radius: 0 0 16px 16px; 
+            margin: 40px -30px -30px -30px; 
+            box-shadow: inset 0 5px 15px rgba(0,0,0,0.3);
+        }
+        footer p {
+            margin: 5px 0;
+            
+            color: var(--color-primario); 
+            font-size: 0.9em;
+        }
+        footer hr {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>PAEC: Conectando tu Aprendizaje con el Mundo Real</h1>
+        </header>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#que-es">¿Qué es?</a>
+            <a href="#objetivos">Objetivos</a>
+            <a href="#inclusion">Inclusión </a> <a href="#fases">Fases</a>
+            <a href="#ejemplos">Propuestas</a>
+            <a href="#muro-ideas">Muro Ideas </a> 
+            <a href="#faq">PF</a>
+            <a href="#videos">Videos</a>
+            <a href="#recursos-externos">Recursos</a>
+            <a href="#proceso-diseno">Diseño </a>
+            <a href="#evaluacion">Evaluación</a>
+        </nav>
+
+        <section id="inicio">
+            <h2>Bienvenidos al PAEC</h2>
+            <p>Bienvenidos a este espacio dedicado al Programa Aula, Escuela y Comunidad.</p>
+            <p>Esta es una estrategia clave de la Nueva Escuela Mexicana para la preparatoria, diseñada para que tu aprendizaje en el salón de clases tenga un impacto real y positivo en tu entorno. Aquí descubrirás cómo puedes usar tus conocimientos para proponer soluciones a los problemas de tu comunidad.</p>
+            
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                alt="Grupo diverso de estudiantes y profesores colaborando en un proyecto comunitario, simbolizando la conexión entre la escuela y la comunidad." 
+                class="responsive-img">
+        </section>
+
+        <section id="que-es">
+            <h2>¿Qué es el PAEC?</h2>
+            <p>El PAEC es una **metodología de trabajo** que busca vincular lo que aprendes en tus materias (**Aula**) con las actividades de tu plantel (**Escuela**) y las necesidades de tu entorno (**Comunidad**).</p>
+            <p>El propósito principal es que tu educación sea **significativa**. En lugar de solo memorizar conceptos, el PAEC te invita a usar ese conocimiento para investigar problemas reales de tu colonia o ciudad y, en equipo, diseñar proyectos que ayuden a solucionarlos.</p>
+            
+            <h3>Definición Formal</h3>
+            <p>El Programa Aula, Escuela y Comunidad (PAEC) es una estrategia para vincular y propiciar el trabajo colaborativo entre los planteles y la comunidad con el objetivo de contextualizar los aprendizajes del estudiantado de educación media superior a través de Proyectos Escolares Comunitarios (PEC), en correspondencia con el Marco Curricular Común de la Educación Media Superior (MCCEMS).</p>
+
+            <h3>¿Quién implementará el PAEC en el plantel?</h3>
+            <p>El PAEC se llevará a cabo gracias al involucramiento y compromiso de las siguientes figuras:</p>
+            
+            <ul>
+                <li>Colegiado escolar</li>
+                <li>Colegiado docente</li>
+                <li>Comité del plantel</li>
+                <li>Colectivo estudiantil</li>
+                <li>Comunidad</li>
+            </ul>
+            <p>La Nueva Escuela Mexicana (NEM) implica a toda la comunidad en la formación integral de las y los estudiantes, por lo que es fundamental la participación de todas y todos. ¡Juntos podemos lograrlo!</p>
+        </section>
+
+        <section id="objetivos">
+            <h2>Objetivos Clave</h2>
+            <ul>
+                <li>Vincular el aprendizaje académico con la realidad social de los estudiantes.</li>
+                <li>Fomentar el pensamiento crítico al analizar problemas del entorno.</li>
+                <li>Desarrollar la responsabilidad social y el compromiso ciudadano.</li>
+                <li>Impulsar proyectos que generen un impacto positivo medible en la comunidad.</li>
+                <li>Integrar a estudiantes, docentes y miembros de la comunidad en un mismo esfuerzo educativo.</li>
+            </ul>
+        </section>
+        
+        <section id="inclusion">
+            <h2>PAEC Inclusivo: La Diversidad como Fortaleza </h2>
+            <p>El PAEC adopta la inclusión como un principio rector fundamental. Reconoce que la diversidad de capacidades es un valor y no un obstáculo. Su objetivo en este ámbito es transformar el ambiente escolar para que acoja y garantice la participación plena de estudiantes con discapacidad.</p>
+            
+            <h3>Pilares de la Inclusión en el PAEC</h3>
+            <div class="inclusion-grid">
+                <div class="inclusion-item">
+                    <h3>1. Accesibilidad Universal</h3>
+                    <p>Implica la eliminación de barreras físicas (rampas, señalética), comunicacionales (Braille, Lengua de Señas Mexicana - LSM) y actitudinales (prejuicios o ignorancia) para que todos los espacios y contenidos sean utilizables por cualquier persona.</p>
+                </div>
+                <div class="inclusion-item">
+                    <h3>2. Ajustes Razonables</h3>
+                    <p>Son las modificaciones o adaptaciones necesarias y adecuadas, que no imponen una carga desproporcionada o indebida, requeridas en un caso particular para garantizar el ejercicio, en igualdad de condiciones, de todos los derechos humanos y libertades fundamentales de las personas con discapacidad.</p>
+                </div>
+                <div class="inclusion-item">
+                    <h3>3. Sensibilización Comunitaria</h3>
+                    <p>Fomentar la empatía, el respeto y la valoración de la diversidad. Los proyectos PAEC deben educar a toda la comunidad escolar (estudiantes, maestros, padres) sobre la discapacidad, promoviendo un lenguaje y trato adecuados.</p>
+                </div>
+               
+                  
+        </section>
+        <section id="fases">
+            <h2>¿Cómo Funciona? (Las 4 Fases)</h2>
+            <p>El PAEC se desarrolla a través de proyectos siguiendo estos pasos:</p>
+            <ol>
+                <li>
+                    <strong>Diagnóstico:</strong> El grupo, con ayuda de los docentes, investiga e identifica necesidades o problemas en su comunidad local (ej. falta de áreas verdes, desinformación sobre salud, **falta de rampas de acceso para sillas de ruedas**).
+                </li>
+                <li>
+                    <strong>Planeación:</strong> Se diseña un "Proyecto Escolar Comunitario" (PEC). Aquí se definen los objetivos, las actividades, los responsables y el calendario para abordar el problema.
+                </li>
+                <li>
+                    <strong>Ejecución:</strong> ¡Manos a la obra! Los estudiantes llevan a cabo las actividades planeadas, aplicando lo que saben de sus materias (ej. usando matemáticas para un presupuesto, o biología para un huerto).
+                </li>
+                <li>
+                    <strong>Seguimiento y Evaluación:</strong> Se analiza el impacto del proyecto. ¿Se logró el objetivo? ¿Qué se aprendió en el proceso? Se reflexiona sobre los resultados.
+                </li>
+            </ol>
+             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                alt="Ilustración de un proceso con flechas y etapas, representando las fases de un proyecto." 
+                class="responsive-img">
+        </section>
+
+        <section id="ejemplos">
+            <h2>Propuestas PEC: Inclusión y Discapacidad </h2>
+            <p>Estos proyectos PEC muestran cómo aplicar el PAEC para crear entornos educativos y comunitarios más accesibles e inclusivos para personas con discapacidad:</p>
+            
+
+            <ul>
+                <li>
+                    <h4>1. Accesibilidad Universal: Rompiendo Barreras</h4>
+                    <p><strong>Aula:</strong> (Física/Matemáticas) Calcular ángulos de rampas y fuerzas para sillas de ruedas.</p>
+                    <p><strong>Escuela:</strong> Realizar un mapa de accesibilidad del plantel identificando obstáculos físicos.</p>
+                    <p><strong>Comunidad:</strong> Diseñar y presentar propuestas de rampas económicas a comercios locales.</p>
+                </li>
+                <li>
+                    <h4>2. Manos que Hablan: Lengua de Señas (LSM)</h4>
+                    <p><strong>Aula:</strong> (Lenguaje/Comunicación) Aprender vocabulario básico de la Lengua de Señas Mexicana.</p>
+                    <p><strong>Escuela:</strong> Interpretar el himno nacional o avisos escolares importantes en LSM.</p>
+                    <p><strong>Comunidad:</strong> Impartir talleres de "Señas Básicas para la Atención al Cliente" a locatarios del barrio.</p>
+                </li>
+                <li>
+                    <h4>3. Mapas Táctiles y Sistema Braille</h4>
+                    <p><strong>Aula:</strong> (Tecnología/Diseño) Estudiar sistemas de lectoescritura para discapacidad visual.</p>
+                    <p><strong>Escuela:</strong> Crear letreros en Braille para las puertas de salones y laboratorios.</p>
+                    <p><strong>Comunidad:</strong> Diseñar menús con texturas y Braille para una cafetería cercana a la escuela.</p>
+                </li>
+                <li>
+                    <h4>4. Deporte Adaptado: Empatía en Movimiento</h4>
+                    <p><strong>Aula:</strong> (Educación Física/Biología) Analizar la biomecánica y la diversidad corporal.</p>
+                    <p><strong>Escuela:</strong> Organizar un torneo escolar de "Golbol" o voleibol sentado.</p>
+                    <p><strong>Comunidad:</strong> Organizar una caminata recreativa inclusiva para visibilizar a deportistas con discapacidad.</p>
+                </li>
+                <li>
+                    <h4>5. Comunicación Aumentativa (Pictogramas)</h4>
+                    <p><strong>Aula:</strong> (Psicología/Ética) Entender la neurodivergencia y formas de comunicación no verbal.</p>
+                    <p><strong>Escuela:</strong> Señalizar áreas comunes con pictogramas de fácil lectura (SAAC).</p>
+                    <p><strong>Comunidad:</strong> Colocar señalética universal basada en imágenes en el parque de la colonia.</p>
+                </li>
+                <li>
+                    <h4>6. Tecnología Asistiva Low-Cost</h4>
+                    <p><strong>Aula:</strong> (Informática/Robótica) Programación básica y diseño 3D.</p>
+                    <p><strong>Escuela:</strong> Desarrollar prototipos de adaptadores para lápices o teclados.</p>
+                    <p><strong>Comunidad:</strong> Donar dispositivos de asistencia impresos en 3D a centros de rehabilitación locales.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="muro-ideas">
+            <h2>Muro de Ideas Comunitarias </h2>
+            <p>El PAEC se construye entre todos. ¿Detectaste un problema en tu colonia o escuela? ¡Propón una solución aquí! Estas ideas quedan visibles para que otros estudiantes se inspiren.</p>
+            
+            <div id="ideas-list" class="ideas-grid">
+                <p style="color: #888;">Cargando ideas de la comunidad...</p>
+            </div>
+
+            <div class="form-container">
+                <h3 style="margin-top: 0;">Publicar nueva propuesta</h3>
+                <form id="ideas-form">
+                    <div>
+                        <label for="idea-nombre" class="form-label">Tu Nombre (Opcional):</label>
+                        <input type="text" id="idea-nombre" name="nombre" placeholder="Ej. Juan Pérez" class="form-input">
+                    </div>
+                    <div>
+                        <label for="idea-problema" class="form-label">Problema detectado:</label>
+                        <input type="text" id="idea-problema" name="problema" required placeholder="Ej. Falta iluminación en la entrada..." class="form-input">
+                    </div>
+                    <div>
+                        <label for="idea-solucion" class="form-label">Propuesta de solución:</label>
+                        <textarea id="idea-solucion" name="solucion" rows="3" required placeholder="Ej. Gestionar con el municipio lámparas solares..." class="form-textarea"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="form-button">Publicar Idea</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section id="faq">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div id="faq-list">
+                <p style="color: #888;">Cargando preguntas frecuentes...</p>
+            </div>
+
+            <div class="form-container">
+                <h3 style="margin-top: 0;">Agregar Nueva Pregunta</h3>
+                <form id="faq-form">
+                    <div>
+                        <label for="faq-pregunta" class="form-label">Pregunta:</label>
+                        <input type="text" id="faq-pregunta" name="pregunta" required class="form-input">
+                    </div>
+                    <div>
+                        <label for="faq-respuesta" class="form-label">Respuesta:</label>
+                        <textarea id="faq-respuesta" name="respuesta" rows="3" required class="form-textarea"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="form-button">
+                            Agregar Pregunta
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="videos">
+            <h2>Videos con más información</h2>
+            <p>Aquí puedes encontrar más recursos visuales sobre el PAEC y proyectos comunitarios.</p>
+            
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_7iGeM28H60?si=tZtgN6Z6qn6lkTO2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/KKtoKap2kI0?si=Cr5ldzuDszlycfW2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>          </div>
+            
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/nm4bBR_xoHA?si=BPoUC7JjrBNIGDaj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>          </div>
+        </section>
+
+        <section id="recursos-externos">
+            <h2>Recursos Adicionales</h2>
+            <p>Explora estos sitios oficiales para obtener más información sobre la Nueva Escuela Mexicana y el PAEC.</p>
+            
+            <div class="recursos-grid">
+                
+                <a href="https://www.gob.mx/sep" target="_blank" rel="noopener noreferrer" class="recurso-link">
+                    <img src="https://i.postimg.cc/kGb9rwvp/logo-SEP.png" 
+                            alt="logo-SEP">
+                    <span>Portal de la SEP</span>
+                </a>
+                
+                <a href="https://educacionmediasuperior.sep.gob.mx/" target="_blank" rel="noopener noreferrer" class="recurso-link">
+                    <img src="https://i.postimg.cc/wMmHKFQF/logo-SUB.png" 
+                            alt="logo-SUB">
+                    <span>Portal de Educación Media Superior</span>
+                </a>
+
+            </div>
+        </section>
+        
+        <section id="proceso-diseno">
+            <h2>Proceso de Diseño</h2>
+            <p>Para asegurar que esta página sea una herramienta verdaderamente útil para la comunidad del plantel, nuestro desarrollo se guía por los siguientes principios de diseño y evaluación centrados en el usuario:</p>
+            <ul>
+                <li>
+                    <strong>Análisis de Necesidades:</strong> Analizar y evaluar las necesidades de los usuarios (estudiantes, docentes, comunidad), enfocándose principalmente en las características interactivas de la página, como los formularios y la navegación.
+                </li>
+                <li>
+                    <strong>Definición de Interacción:</strong> Definir el comportamiento que tendrá la interfaz en la interacción con los usuarios, buscando que sea intuitiva, accesible y clara en todas las secciones.
+                </li>
+                <li>
+                    <strong>Diseño de Prototipos:</strong> Diseñar prototipos o propuestas que puedan ser comprendidos por el plantel para su desarrollo y que puedan ser sometidos a evaluación antes de la implementación final.
+                </li>
+                <li>
+                    <strong>Evaluación Continua:</strong> Usar métodos de evaluación propios (como el formulario de esta misma página) y la retroalimentación directa, para corroborar que la página satisface las necesidades de sus usuarios y mejorarla constantemente.
+                </li>
+            </ul>
+        </section>
+
+        <section id="evaluacion">
+            <h2>Evalúa esta página</h2>
+            <p>Tu opinión es importante. Ayúdanos a mejorar este recurso respondiendo estas dos preguntas.</p>
+
+            <div class="form-container">
+                <form id="eval-form">
+                    <div>
+                        <label for="eval-rating" class="form-label">¿Qué tan útil te pareció la página?</label>
+                        <select id="eval-rating" name="rating" required class="form-select">
+                            <option value="">-- Elige una opción --</option>
+                            <option value="5">⭐⭐⭐⭐⭐ - Excelente</option>
+                            <option value="4">⭐⭐⭐⭐ - Muy Buena</option>
+                            <option value="3">⭐⭐⭐ - Regular</option>
+                            <option value="2">⭐⭐ - Mala</option>
+                            <option value="1">⭐ - Muy Mala</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="eval-comentarios" class="form-label">Comentarios o sugerencias:</label>
+                        <textarea id="eval-comentarios" name="comentarios" rows="4" placeholder="¿Qué podríamos mejorar? ¿Qué te gustó más?" class="form-textarea"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="form-button">
+                            Enviar Evaluación
+                        </button>
+                    </div>
+                    <div id="eval-success-message" style="display: none;"></div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <p>Proyecto: "Construyendo Puentes: Inclusión para Todas y Todos" </p>
+            <p>CETIS 109 - 5to Bv Programación</p>
+            <p>Alumnos: Ceballos Vazquez Luis Fernando & Garcia Enriquez Dulce Aneliz</p>
+            <p>Maestra: Margarita Romero Alvarado</p>
+        </footer>
+        
+    </div> 
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, addDoc, onSnapshot, collection, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        let db, auth, app, userId;
+        
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        let firebaseConfig;
+        try {
+            firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        } catch (e) {
+            firebaseConfig = {};
+        }
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : undefined;
+
+        const faqsCollectionPath = `artifacts/${appId}/public/data/faqs`;
+        const evaluacionesCollectionPath = `artifacts/${appId}/public/data/evaluaciones`;
+        
+        const ideasCollectionPath = `artifacts/${appId}/public/data/ideas`;
+
+
+        async function initializeFirebase() {
+            if (!firebaseConfig.apiKey) {
+                document.getElementById('faq-list').innerHTML = '<p class="text-red-500">Error: La configuración de la base de datos no está disponible.</p>';
+                return;
+            }
+            try {
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        setupFAQListener();
+                        setupFAQForm(); 
+                        setupEvaluacionForm();
+                        
+                       
+                        setupIdeasListener();
+                        setupIdeasForm();
+
+                    } else {
+                        signIn();
+                    }
+                });
+            } catch (error) {
+                document.getElementById('faq-list').innerHTML = '<p class="text-red-500">Error al inicializar la base de datos.</p>';
+            }
+        }
+
+        async function signIn() {
+            try {
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (error) {
+               
+            }
+        }
+
+        function setupFAQListener() {
+            const faqListElement = document.getElementById('faq-list');
+            if (!faqListElement) {
+                return;
+            }
+
+            const faqsCollectionRef = collection(db, faqsCollectionPath);
+
+            onSnapshot(faqsCollectionRef, (snapshot) => {
+                faqListElement.innerHTML = ''; 
+                if (snapshot.empty) {
+                    faqListElement.innerHTML = '<p class="text-gray-500">No hay preguntas frecuentes por el momento. ¡Agrega la primera!</p>';
+                    return;
+                }
+                
+                snapshot.forEach((doc) => {
+                    const faq = doc.data();
+                    const faqItem = document.createElement('div');
+                    faqItem.className = 'faq-item'; 
+                    
+                    faqItem.innerHTML = `
+                        <h3>${faq.pregunta || 'Sin pregunta'}</h3>
+                        <p>${faq.respuesta || 'Sin respuesta'}</p>
+                    `;
+                    faqListElement.appendChild(faqItem);
+                });
+            }, (error) => {
+                faqListElement.innerHTML = '<p style="color: red;">Error al cargar las preguntas.</p>';
+            });
+        }
+
+        function setupFAQForm() {
+            const faqForm = document.getElementById('faq-form');
+            if (!faqForm) {
+                return;
+            }
+
+            faqForm.addEventListener('submit', async (e) => {
+                e.preventDefault(); 
+                
+                const preguntaInput = document.getElementById('faq-pregunta');
+                const respuestaInput = document.getElementById('faq-respuesta');
+                const submitButton = faqForm.querySelector('button[type="submit"]');
+
+                const pregunta = preguntaInput.value.trim();
+                const respuesta = respuestaInput.value.trim();
+
+                if (pregunta && respuesta) {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Agregando...';
+
+                    try {
+                        const faqsCollectionRef = collection(db, faqsCollectionPath);
+                        await addDoc(faqsCollectionRef, {
+                            pregunta: pregunta,
+                            respuesta: respuesta
+                        });
+                        
+                        preguntaInput.value = '';
+                        respuestaInput.value = '';
+                    } catch (error) {
+                        const errorMsg = document.createElement('p');
+                        errorMsg.textContent = 'Error al guardar la pregunta. Inténtalo de nuevo.';
+                        errorMsg.style.color = 'red';
+                        errorMsg.style.fontSize = '0.9em';
+                        faqForm.appendChild(errorMsg);
+                        setTimeout(() => errorMsg.remove(), 3000);
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Agregar Pregunta';
+                    }
+                }
+            });
+        }
+
+        
+        function setupIdeasListener() {
+            const ideasListElement = document.getElementById('ideas-list');
+            if (!ideasListElement) return;
+
+            const ideasCollectionRef = collection(db, ideasCollectionPath);
+
+            onSnapshot(ideasCollectionRef, (snapshot) => {
+                ideasListElement.innerHTML = ''; 
+                if (snapshot.empty) {
+                    ideasListElement.innerHTML = '<p class="text-gray-500">Aún no hay ideas. ¡Sé el primero en proponer una!</p>';
+                    return;
+                }
+                
+                snapshot.forEach((doc) => {
+                    const idea = doc.data();
+                    const card = document.createElement('div');
+                    card.className = 'idea-card';
+                    
+                    card.innerHTML = `
+                        <span class="autor">Propuesto por: ${idea.nombre || 'Anónimo'}</span>
+                        <h4>Problema:</h4>
+                        <p>${idea.problema}</p>
+                        <hr>
+                        <h4>💡 Solución propuesta:</h4>
+                        <p>${idea.solucion}</p>
+                    `;
+                    ideasListElement.appendChild(card);
+                });
+            });
+        }
+
+       
+        function setupIdeasForm() {
+            const ideaForm = document.getElementById('ideas-form');
+            if (!ideaForm) return;
+
+            ideaForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const nombre = document.getElementById('idea-nombre').value.trim();
+                const problema = document.getElementById('idea-problema').value.trim();
+                const solucion = document.getElementById('idea-solucion').value.trim();
+                const submitButton = ideaForm.querySelector('button[type="submit"]');
+
+                if (problema && solucion) {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Publicando...';
+
+                    try {
+                        const ideasCollectionRef = collection(db, ideasCollectionPath);
+                        await addDoc(ideasCollectionRef, {
+                            nombre: nombre,
+                            problema: problema,
+                            solucion: solucion,
+                            timestamp: new Date()
+                        });
+                        
+                        
+                        document.getElementById('idea-nombre').value = '';
+                        document.getElementById('idea-problema').value = '';
+                        document.getElementById('idea-solucion').value = '';
+                        alert('¡Tu idea ha sido publicada en el muro!');
+
+                    } catch (error) {
+                        alert('Error al publicar. Intenta de nuevo.');
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Publicar Idea';
+                    }
+                }
+            });
+        }
+
+        
+        function setupEvaluacionForm() {
+            const evalForm = document.getElementById('eval-form');
+            if (!evalForm) {
+                return;
+            }
+
+            evalForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const ratingInput = document.getElementById('eval-rating');
+                const comentariosInput = document.getElementById('eval-comentarios');
+                const submitButton = evalForm.querySelector('button[type="submit"]');
+                const successMessage = document.getElementById('eval-success-message');
+
+                const rating = ratingInput.value;
+                const comentarios = comentariosInput.value.trim();
+
+                if (rating) { 
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Enviando...';
+
+                    try {
+                        const evaluacionesCollectionRef = collection(db, evaluacionesCollectionPath);
+                        await addDoc(evaluacionesCollectionRef, {
+                            rating: parseInt(rating, 10), 
+                            comentarios: comentarios,
+                            timestamp: new Date() 
+                        });
+
+                        
+                        successMessage.textContent = '¡Gracias por tu evaluación!';
+                        successMessage.className = 'form-success-message'; 
+                        successMessage.style.display = 'block';
+                        
+                        ratingInput.value = '';
+                        comentariosInput.value = '';
+
+                        
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 3000);
+
+                    } catch (error) {
+                        
+                        successMessage.textContent = 'Error al enviar. Inténtalo de nuevo.';
+                        successMessage.style.backgroundColor = '#f8d7da'; 
+                        successMessage.style.color = '#721c24';
+                        successMessage.style.display = 'block';
+
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 3000);
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Enviar Evaluación';
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('load', initializeFirebase);
+
+    </script>
+</body>
+</html>
